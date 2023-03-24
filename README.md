@@ -24,4 +24,4 @@ User Management App instructions:
 1. press "Click me to get user profiles" button and enter user profile section.
 2. You can add user with their name, age and email address.
 3. Edit is not working :( (I am trying to figure it out!).
-4. Press delete button on the user you want to delete and refresh the website. It will disappear (redirect is not working, I am trying!).
+4. Press delete button on the user you want to delete and refresh the website. It will disappear (redirect is not working, already solved inside delete).

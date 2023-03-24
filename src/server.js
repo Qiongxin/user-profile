@@ -83,7 +83,7 @@ app.delete("/users/:id", async (req, res) => {
   } catch(err) {
     console.log(err)
   }
-  //Problem 3: redirect is not working
+  //Problem 3: redirect is not working (Solved inside delete component, but this is still not working)
   res.redirect("http://localhost:3000/users")
 })
 

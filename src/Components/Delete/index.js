@@ -1,19 +1,23 @@
 import React from 'react'
 import $ from "jquery"
 
-function Delete({id}) {
+function Delete({id, name}) {
 
   //get id from main component and pass it to mongodb for deleting
   const deleteUser = () => {
-    $.ajax({
-      url: `http://localhost:3001/users/${id}`,
-      type: 'DELETE',
-      success: data => {
-        console.log("Successfully send delete request");
-      },
-      error: err => 
-        console.log(err)
-    });
+    const answer = window.confirm(`Are you sure to delete ${name}'s profile?`)
+    if (answer) {
+      $.ajax({
+        url: `http://localhost:3001/users/${id}`,
+        type: 'DELETE',
+        success: data => {
+          console.log("Successfully send delete request")
+        },
+        error: err => 
+          console.log(err)
+      })
+      window.location = "http://localhost:3000/users"
+    }
   }
 
   return (
