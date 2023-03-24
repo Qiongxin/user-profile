@@ -3,6 +3,7 @@ import Add from '../Add'
 import Delete from '../Delete'
 import Update from '../Update'
 import $ from "jquery"
+import { Link } from 'react-router-dom'
 
 function Main() {
 
@@ -14,7 +15,7 @@ function Main() {
       url: 'http://localhost:3001/users',
       type: 'GET',
       success: data => {
-        setUsers(data);
+        setUsers(data)
       },
       error: err => {
         console.error(err)
@@ -46,7 +47,7 @@ function Main() {
 
             // Problem 1: there is always a key error shows on console
             // Problem 2: Maybe it's because of the network instability, sometimes can't fetch data from mongodb
-            (<tr key={user._id}>
+            (<tr className='hover:bg-slate-100' key={user._id}>
               <th className="border py-3 px-8" scope="row">{user._id}</th>
               <td className="border py-3 px-8">{user.name}</td>
               <td className="border py-3 px-8">{user.age}</td>
@@ -59,7 +60,7 @@ function Main() {
           }   
         </tbody>
       </table>
-      <Add />
+      <Link className='border rounded border-1 border-cyan-600 p-2 mx-3 outline-none text-cyan-600 hover:bg-cyan-600 hover:text-white' to="/users/add">Add user</Link>
     </div>
   )
 }

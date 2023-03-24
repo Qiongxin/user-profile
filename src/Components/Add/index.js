@@ -1,5 +1,6 @@
 import React, { useRef } from 'react'
 import $ from "jquery"
+import { Link } from 'react-router-dom'
 
 function Add() {
 
@@ -24,16 +25,19 @@ function Add() {
       error: err => 
         console.log(err)
     });
-
   }
 
   return (
-    <div>
-      <form> 
-        <input className='border rounded border-1 border-cyan-600 p-2 mx-3 outline-none' type="text" ref={nameRef} placeholder='name'/>
-        <input className='border rounded border-1 border-cyan-600 p-2 mx-3 outline-none' type="text" ref={ageRef} placeholder='age'/>
-        <input className='border rounded border-1 border-cyan-600 p-2 mx-3 outline-none' type="text" ref={emailRef} placeholder='email' />
-        <button className='border rounded border-1 border-cyan-600 p-2 mx-3 outline-none text-cyan-600 hover:bg-cyan-600 hover:text-white' type="submit" onClick={addUser}>ADD</button>
+    <div className="flex flex-col items-center font-mono h-screen mt-20">
+      <h1 className="text-4xl font-bold mb-10 text-cyan-600 font-mono">Add user</h1>
+      <form className="border rounded border-1 w-2/5">
+          <input className='border rounded border-1 border-cyan-600 mx-auto w-4/5 p-3 my-9 outline-none block' type="text" ref={nameRef} placeholder='name'/>
+          <input className='border rounded border-1 border-cyan-600 mx-auto w-4/5 p-3 my-9 outline-none block' type="text" ref={ageRef} placeholder='age'/>
+          <input className='border rounded border-1 border-cyan-600 mx-auto w-4/5 p-3 my-9 outline-none block' type="text" ref={emailRef} placeholder='email' />      
+
+        {/* I tried use res.redirect, history and window.location to redirect to users page,
+        it's not working at all! Then I used react router Link to replace the button, it works perfect!! */}
+        <Link className='border rounded border-1 border-cyan-600 p-3 my-14 mx-auto outline-none text-cyan-600 hover:bg-cyan-600 hover:text-white text-center block w-4/5' to="/users" onClick={addUser}>ADD</Link>
       </form>
     </div>
   )

@@ -1,5 +1,6 @@
 import React from 'react'
 import $ from "jquery"
+import { Link } from 'react-router-dom'
 
 function Delete({id, name}) {
 
@@ -16,6 +17,7 @@ function Delete({id, name}) {
         error: err => 
           console.log(err)
       })
+      //I don't understand why it's working here, bot working on add component
       window.location = "http://localhost:3000/users"
     }
   }

@@ -40,7 +40,7 @@ app.get("/users", async (req, res) => {
     })
   } catch(err) {
     console.log(err)
-  } 
+  }
 })
 
 //create a new user, put data that get from component and store it to mongodb
@@ -52,6 +52,7 @@ app.post("/users", (req, res) => {
     email
   })
   user.save().then(() => {
+    //not working
     res.redirect("http://localhost:3000/users")
   }).catch((err) => {
     console.log(err)
