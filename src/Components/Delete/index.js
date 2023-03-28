@@ -1,6 +1,5 @@
 import React from 'react'
 import $ from "jquery"
-import { Link } from 'react-router-dom'
 
 function Delete({id, name}) {
 

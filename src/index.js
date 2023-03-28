@@ -8,6 +8,7 @@ import {
 } from "react-router-dom";
 import Main from './Components/Main';
 import Add from './Components/Add';
+import Update from './Components/Update';
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
   {
     path: "/users/add",
     element: <Add />
+  },
+  {
+    path: "/users/update",
+    element: <Update />
   }
 ]);
 

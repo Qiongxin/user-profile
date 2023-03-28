@@ -21,7 +21,7 @@ Here is the instructions on how to run the app locally on VS code:
 
 User Management App instructions:
 
-1. press "Click me to get user profiles" button and enter user profile section.
-2. You can add user with their name, age and email address.
-3. Edit is not working :( (I am trying to figure it out!).
-4. Press delete button on the user you want to delete and refresh the website. It will disappear (redirect is not working, already solved inside delete).
+1. Press "Click me to get user profiles" button and enter user profile section (It can be changed to login page).
+2. Press add user button and add with new user's name, age and email address, you can also cancel it.
+3. Press edit button to edit name, age or email address of the user, it has cancellation option.
+4. Press delete button on the user you want to delete.

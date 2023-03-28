@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import Add from '../Add'
 import Delete from '../Delete'
-import Update from '../Update'
 import $ from "jquery"
 import { Link } from 'react-router-dom'
 
@@ -23,10 +21,6 @@ function Main() {
     })
   }, [])
 
-  const nameInput = (e) => {
-    
-  }
-
   return (
     <div className="flex flex-col items-center font-mono h-screen mt-20">
       <h1 className="text-4xl font-bold mb-10 text-cyan-600">User Profiles</h1>
@@ -46,14 +40,14 @@ function Main() {
           {users.map((user) =>
 
             // Problem 1: there is always a key error shows on console
-            // Problem 2: Maybe it's because of the network instability, sometimes can't fetch data from mongodb
+            // Problem 2: Maybe it's because of the network instability, sometimes it can't fetch data from mongodb
             (<tr className='hover:bg-slate-100' key={user._id}>
               <th className="border py-3 px-8" scope="row">{user._id}</th>
               <td className="border py-3 px-8">{user.name}</td>
               <td className="border py-3 px-8">{user.age}</td>
               <td className="border py-3 px-8">{user.email}</td>
               {/* pass id to update and delete component */}
-              <td className="border py-3 px-8"><Update id={user._id} nameUpdate={nameInput}/></td>
+              <td className="border py-3 px-8"><Link to="/users/update" state={{user}}>Edit</Link></td>
               <td className="border py-3 px-8"><Delete id={user._id} name={user.name}/></td>
             </tr>)
             )

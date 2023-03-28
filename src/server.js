@@ -30,6 +30,7 @@ const userSchema = new Schema({
   email: String
 })
 
+//create user model
 const User = model("User", userSchema)
 
 //create get method, find the user profiles and pass it to main component
