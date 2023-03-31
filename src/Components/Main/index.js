@@ -25,6 +25,11 @@ function Main() {
   return (
     // Task 2. Create a React component to display the list of user profiles.
     <div className="flex flex-col items-center font-mono h-screen mt-20">
+      {/* Log out button */}
+      {/* <div className="flex justify-center items-center fixed top-0 h-20 w-screen border-b border-cyan-600 bg-cyan-600 z-1">
+        <h1 className="text-4xl font-bold text-white">User Profiles</h1>
+        <Link className='border fixed right-0 rounded border-1 border-white p-2 mx-3 outline-none text-white hover:bg-white hover:text-cyan-600' to="/">Log Out</Link>
+      </div> */}
       <h1 className="text-4xl font-bold mb-10 text-cyan-600">User Profiles</h1>
       <table className="table-fixed border-solid border-1 text-center mb-8">
         <thead className="border">
