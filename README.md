@@ -1,6 +1,12 @@
 Here is the instructions on how to run the app locally on VS code:
 
-1.  Open a terminal window, in the project directory, you can run:
+1. Download code from https://github.com/Qiongxin/user-profile
+
+2. Open file on VS code and inside terminal, run:
+
+    ### `npm i`
+
+3.  Inside the terminal window, in the project directory, you can run:
 
     ### `npm start`
 
@@ -8,7 +14,7 @@ Here is the instructions on how to run the app locally on VS code:
     Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 
-2.  Open a new terminal window, cd to src directory and run:
+4.  Open a new terminal window, cd to src directory and run:
 
     ### `nodemon server.js`
 
