@@ -4,6 +4,7 @@ import $ from "jquery"
 function Delete({id, name}) {
 
   //get id from main component and pass it to mongodb for deleting
+  //Task 5 and 7. Use jQuery to make AJAX requests DELETE /users/:id: Delete a user profile by ID.
   const deleteUser = () => {
     const answer = window.confirm(`Are you sure to delete ${name}'s profile?`)
     if (answer) {
@@ -13,10 +14,11 @@ function Delete({id, name}) {
         success: data => {
           console.log("Successfully send delete request")
         },
-        error: err => 
+        error: err => {
           console.log(err)
+        }
       })
-      //I don't understand why it's working here, bot working on add component
+      //I don't understand why it's working here, not working on add component
       window.location = "http://localhost:3000/users"
     }
   }

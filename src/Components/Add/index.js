@@ -2,6 +2,7 @@ import React, { useRef } from 'react'
 import $ from "jquery"
 import { Link } from 'react-router-dom'
 
+//Task 3. Create a React component to add new user profiles.
 function Add() {
 
   //create name, age and email refs to store data
@@ -10,6 +11,7 @@ function Add() {
   const emailRef = useRef(null)
 
   //get data from user input and pass it to mongodb
+  //Task 5 and 7. Use jQuery to make AJAX requests POST /users: Add a new user profile.
   const addUser = async () => {
     $.ajax({
       url: 'http://localhost:3001/users',
@@ -20,11 +22,12 @@ function Add() {
         email: emailRef.current.value
       },
       success: data => {
-        console.log("Successfully send post request");
+        console.log("Successfully send post request")
       },
-      error: err => 
+      error: err => {
         console.log(err)
-    });
+      }
+    })
   }
 
   return (

@@ -8,6 +8,7 @@ function Main() {
   const [users, setUsers] = useState([{}])
   
   //fetch users profile from mongodb and store it inside users state
+  //Task 5 and 7. Use jQuery to make AJAX requests GET /users: Retrieve all user profiles.
   useEffect(() => {
     $.ajax({
       url: 'http://localhost:3001/users',
@@ -16,12 +17,13 @@ function Main() {
         setUsers(data)
       },
       error: err => {
-        console.error(err)
+        console.log(err)
       }
     })
   }, [])
 
   return (
+    // Task 2. Create a React component to display the list of user profiles.
     <div className="flex flex-col items-center font-mono h-screen mt-20">
       <h1 className="text-4xl font-bold mb-10 text-cyan-600">User Profiles</h1>
       <table className="table-fixed border-solid border-1 text-center mb-8">
@@ -37,12 +39,13 @@ function Main() {
         </thead>
         <tbody className="border">
           {/* render users's name, age, email and update and delete buttons using map function */}
-          {users.map((user) =>
+          {users.map((user, index) =>
 
             // Problem 1: there is always a key error shows on console
             // Problem 2: Maybe it's because of the network instability, sometimes it can't fetch data from mongodb
             (<tr className='hover:bg-slate-100' key={user._id}>
-              <th className="border py-3 px-8" scope="row">{user._id}</th>
+              {/* or {user._id} */}
+              <th className="border py-3 px-8" scope="row">{index+1}</th>
               <td className="border py-3 px-8">{user.name}</td>
               <td className="border py-3 px-8">{user.age}</td>
               <td className="border py-3 px-8">{user.email}</td>

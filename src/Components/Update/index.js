@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import $ from "jquery"
 import { Link, useLocation } from 'react-router-dom';
 
+//Task 4. Create a React component to update existing user profiles.
 function Update() {
   //pass props from main to here using react router link
   const { state } = useLocation()
@@ -12,6 +13,7 @@ function Update() {
   const [email, setEmail] = useState(user.email)
 
   //send updated data to mongodb
+  //Task 5 and 7. Use jQuery to make AJAX requests PUT /users/:id: Update a user profile by ID.
   const updateUser = () => {
     $.ajax({
       url: `http://localhost:3001/users/${user._id}`,
@@ -22,11 +24,12 @@ function Update() {
         email
       },
       success: data => {
-        console.log("Successfully send put request");
+        console.log("Successfully send put request")
       },
-      error: err => 
+      error: err => {
         console.log(err)
-    });
+      }
+    })
 
 
   }
