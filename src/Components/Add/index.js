@@ -1,6 +1,7 @@
 import React, { useRef } from 'react'
 import $ from "jquery"
 import { Link } from 'react-router-dom'
+import isEmail from 'validator/lib/isEmail'
 
 //Task 3. Create a React component to add new user profiles.
 function Add() {
@@ -12,22 +13,26 @@ function Add() {
 
   //get data from user input and pass it to mongodb
   //Task 5 and 7. Use jQuery to make AJAX requests POST /users: Add a new user profile.
-  const addUser = async () => {
-    $.ajax({
-      url: 'http://localhost:3001/users',
-      type: 'POST',
-      data: { 
-        name: nameRef.current.value,
-        age: ageRef.current.value,
-        email: emailRef.current.value
-      },
-      success: data => {
-        console.log("Successfully send post request")
-      },
-      error: err => {
-        console.log(err)
-      }
-    })
+  const addUser = () => {
+    if (isEmail(emailRef.current.value)) {
+      $.ajax({
+        url: 'http://localhost:3001/users',
+        type: 'POST',
+        data: { 
+          name: nameRef.current.value,
+          age: ageRef.current.value,
+          email: emailRef.current.value
+        },
+        success: data => {
+          console.log("Successfully send post request")
+        },
+        error: err => {
+          console.log(err)
+        }
+      })
+    } else {
+      alert("Please enter a valid email address!")
+    }
   }
 
   return (

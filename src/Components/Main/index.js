@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Delete from '../Delete'
 import $ from "jquery"
 import { Link } from 'react-router-dom'
+import { v4 as uuidv4 } from 'uuid'
 
 function Main() {
 
@@ -48,7 +49,7 @@ function Main() {
 
             // Problem 1: there is always a key error shows on console
             // Problem 2: Maybe it's because of the network instability, sometimes it can't fetch data from mongodb
-            (<tr className='hover:bg-slate-100' key={user._id}>
+            (<tr className='hover:bg-slate-100' key={uuidv4()}>
               {/* or {user._id} */}
               <th className="border py-3 px-8" scope="row">{index+1}</th>
               <td className="border py-3 px-8">{user.name}</td>

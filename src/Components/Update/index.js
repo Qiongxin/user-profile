@@ -31,7 +31,6 @@ function Update() {
       }
     })
 
-
   }
 
   //get new values

@@ -24,14 +24,14 @@ const connectDB = async () => {
   }
 }
 
-//create user schema
+//create a structure of user data
 const userSchema = new Schema({
   name: String,
   age: String,
   email: String
 })
 
-//create user model
+//create a user collection
 const User = model("User", userSchema)
 
 //create get method, find the user profiles and pass it to main component
@@ -40,7 +40,7 @@ app.route("/users")
   .get(async (req, res) => {
     try {
       User.find({}).then((foundUsers) => {
-        res.json(foundUsers)
+        res.send(foundUsers)
       })
     } catch(err) {
       console.log(err)
