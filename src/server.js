@@ -27,7 +27,7 @@ const connectDB = async () => {
 //create a structure of user data
 const userSchema = new Schema({
   name: String,
-  age: String,
+  age: Number,
   email: String
 })
 
